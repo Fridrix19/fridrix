@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проект — FRIDRIX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">FRIDRIX</a>
+            <div class="nav-links">
+                <a href="portfolio.html" class="nav-link">Работы</a>
+                <a href="about.html" class="nav-link">О себе</a>
+                <a href="services.html" class="nav-link">Услуги</a>
+                <a href="faq.html" class="nav-link" title="Часто задаваемые вопросы">Вопросы</a>
+                <a href="contact.html" class="nav-link">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="portfolio.html" class="mobile-nav-item">
+            <img src="img/Portfolio.png" alt="Работы" class="mobile-nav-icon">
+            <span class="mobile-nav-label">Работы</span>
+        </a>
+        <a href="about.html" class="mobile-nav-item">
+            <img src="img/Aboutme.png" alt="О себе" class="mobile-nav-icon">
+            <span class="mobile-nav-label">О себе</span>
+        </a>
+        <a href="services.html" class="mobile-nav-item">
+            <img src="img/Price.png" alt="Услуги" class="mobile-nav-icon">
+            <span class="mobile-nav-label">Услуги</span>
+        </a>
+        <a href="faq.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon mobile-nav-icon-fallback" aria-hidden="true">?</span>
+            <span class="mobile-nav-label">Вопросы</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <img src="img/Contact.png" alt="Контакты" class="mobile-nav-icon">
+            <span class="mobile-nav-label">Контакты</span>
+        </a>
+    </nav>
+
+    <!-- Product Header -->
+    <section class="product-header">
+        <div class="product-header-container">
+            <a href="portfolio.html" class="back-link">← Назад к работам</a>
+            <div class="product-meta">
+                <span class="product-category-badge" id="productCategory">UX/UI</span>
+                <h1 class="product-title" id="productTitle">Название проекта</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Hero Image -->
+    <section class="product-hero">
+        <div class="product-hero-image" id="productHeroImage"></div>
+        <div class="product-hero-preview" id="productHeroPreview" style="display: none;">
+            <button class="hero-preview-btn" id="heroPreviewPrev" type="button">←</button>
+            <div class="hero-preview-track" id="heroPreviewTrack"></div>
+            <button class="hero-preview-btn" id="heroPreviewNext" type="button">→</button>
+        </div>
+    </section>
+
+    <!-- Product Content -->
+    <section class="product-content">
+        <div class="product-content-container">
+            <div class="product-info">
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Клиент</span>
+                        <span class="detail-value" id="productClient">Название компании</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Год</span>
+                        <span class="detail-value" id="productYear">2024</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Роль</span>
+                        <span class="detail-value" id="productRole">Дизайнер / Разработчик</span>
+                    </div>
+                    <div class="detail-item" id="productPriceContainer" style="display: none;">
+                        <span class="detail-label">Стоимость проекта</span>
+                        <span class="detail-value" id="productPrice">—</span>
+                    </div>
+                    <div class="detail-item" id="productLinkContainer" style="display: none;">
+                        <a href="" target="_blank" rel="noopener noreferrer" id="productLink"
+                            class="detail-link">Посмотреть сайт →</a>
+                    </div>
+                </div>
+                <div class="product-description-full">
+                    <h2>О проекте</h2>
+                    <p id="productDescription">
+                        Подробное описание проекта будет здесь.
+                    </p>
+                    <h2>Задачи</h2>
+                    <ul id="productTasks">
+                        <li>Задача проекта</li>
+                    </ul>
+                    <h2>Решение</h2>
+                    <p id="productSolution">
+                        Описание решения и подхода к проекту.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product PDF Viewer -->
+    <section class="product-pdf" id="productPdfContainer" style="display: none;">
+        <div class="product-pdf-container">
+            <h2>Материалы проекта (PDF)</h2>
+            <div class="pdf-list" id="pdfList"></div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="product-gallery" id="productGallery">
+        <div class="product-gallery-container" id="galleryContainer">
+            <!-- Gallery items will be inserted here by JavaScript -->
+        </div>
+        <!-- Slider for projects with multiple images -->
+        <div class="product-slider" id="productSlider" style="display: none;">
+            <div class="slider-container">
+                <button class="slider-btn slider-prev" id="sliderPrev">←</button>
+                <div class="slider-viewport">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Slider items will be inserted here -->
+                    </div>
+                </div>
+                <button class="slider-btn slider-next" id="sliderNext">→</button>
+            </div>
+            <div class="slider-dots" id="sliderDots">
+                <!-- Dots will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Project -->
+    <section class="next-project">
+        <div class="next-project-container">
+            <a href="index.html" class="next-project-link">
+                <span>Следующий проект</span>
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Image Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Закрыть">×</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button"
+            aria-label="Предыдущее фото">←</button>
+        <div class="lightbox-content" id="lightboxContent">
+            <img class="lightbox-image" id="lightboxImage" alt="">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button"
+            aria-label="Следующее фото">→</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
+        <div class="footer-container">
+            <div class="footer-form-block">
+                <div class="footer-quick-links">
+                    <a href="https://t.me/fridrix_order" class="footer-contact-link" target="_blank"
+                        rel="noopener noreferrer">Telegram</a>
+                    <a href="mailto:hello@fridrix.design" class="footer-contact-link">Email</a>
+                </div>
+                <form id="contactForm" class="contact-form contact-form--footer">
+                    <div class="footer-form-row">
+                        <div class="form-group form-group--footer">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" class="form-input form-input--footer" required
+                                placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group form-group--footer">
+                            <label for="contact">Контакт</label>
+                            <input type="text" id="contact" name="contact" class="form-input form-input--footer" required
+                                placeholder="@ или email">
+                        </div>
+                    </div>
+                    <div class="form-group form-group--footer">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" class="form-input form-input--footer" rows="3" required
+                            placeholder="Кратко о задаче..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-footer-submit">Отправить</button>
+                </form>
+            </div>
+            <p class="footer-copy">&copy; 2024 FRIDRIX. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+</body>
+
+</html>
